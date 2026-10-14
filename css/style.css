@@ -1,0 +1,650 @@
+/* ==========================================================
+   KY'S PORTFOLIO - STYLE.CSS (HOME)
+   Theme: Floral Nature (Hijau Muda, Sage, Olive, Pink Muda)
+   ========================================================== */
+
+:root {
+    --bg-light-green: #E8F5E9;
+    --bg-soft-cream: #FAF9F6;
+    --accent-sage: #A3B18A;
+    --accent-olive: #6B8E23;
+    --accent-olive-dark: #556B2F;
+    --accent-pink: #F4ACB7;
+    --accent-pink-soft: #FFE5EC;
+    --accent-pink-hover: #E79CA8;
+    --text-forest: #1B4332;
+    --text-muted: #344E41;
+    --border-pink: rgba(244, 172, 183, 0.35);
+    --border-sage: rgba(163, 177, 138, 0.3);
+    --shadow-soft: 0 15px 35px rgba(244, 172, 183, 0.2);
+    --transition: all 0.3s ease;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-soft-cream);
+    color: var(--text-muted);
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 9%;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-pink);
+    transition: var(--transition);
+    /* Animasi Navbar meluncur dari atas */
+    animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-forest);
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--accent-pink);
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.list a {
+    display: inline-block;
+    color: var(--text-forest);
+    margin-left: 45px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 6px 0;
+}
+
+.list a:hover {
+    color: var(--accent-olive);
+    border-bottom: 2px solid var(--accent-pink);
+    transform: translateY(-2px);
+}
+
+#menu-icon {
+    display: none;
+}
+
+/* ===== HERO SECTION ===== */
+.home {
+    min-height: 100vh;
+    width: 100%;
+    /* Gradasi taman bunga: Hijau Muda -> Krem -> Blush Pink */
+    background: linear-gradient(135deg, #EAF4EC 0%, #FAF9F6 40%, #FFE9EE 100%);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding: 0 9%;
+}
+
+/* Animasi Masuk Teks dari Kiri */
+.home-text {
+    z-index: 2;
+    animation: slideInLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.home-text h5 {
+    color: var(--text-forest);
+    font-size: 66px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.home-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 530px;
+    margin-bottom: 15px;
+}
+
+/* Tombol Primer (Olive Green) */
+.home-text a {
+    display: inline-block;
+    color: #FFFFFF;
+    background: var(--accent-olive);
+    padding: 13px 34px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    margin-right: 15px;
+    border: 2px solid var(--accent-olive);
+    box-shadow: 0 8px 22px rgba(107, 142, 35, 0.25);
+    transition: var(--transition);
+}
+
+.home-text a:hover {
+    background: var(--accent-olive-dark);
+    border-color: var(--accent-olive-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(85, 107, 47, 0.35);
+}
+
+/* Tombol Sekunder "A few" (Pink Muda / Blossom) */
+.home-text a.high {
+    background: var(--accent-pink-soft);
+    color: var(--text-forest);
+    border: 2px solid var(--accent-pink);
+    box-shadow: 0 8px 20px rgba(244, 172, 183, 0.3);
+}
+
+.home-text a.high:hover {
+    background: var(--accent-pink);
+    color: #FFFFFF;
+    border-color: var(--accent-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(244, 172, 183, 0.45);
+}
+
+/* Animasi Masuk Foto dari Kanan */
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.home-img img {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #FFFFFF;
+    outline: 3px solid var(--accent-pink);
+    box-shadow: 0 20px 45px rgba(244, 172, 183, 0.35);
+    display: block;
+    margin: 0 auto;
+    transition: var(--transition);
+}
+
+.home-img img:hover {
+    outline-color: var(--accent-olive);
+    transform: scale(1.03);
+}
+
+section {
+    padding: 0 9%;
+}
+
+/* ===== FLOATING SOCIAL ICONS ===== */
+.icons {
+    position: fixed;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+    z-index: 100;
+    /* Muncul dari kiri */
+    animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.icons a {
+    display: block;
+}
+
+.icons i {
+    display: block;
+    margin: 24px 0;
+    font-size: 24px;
+    color: var(--accent-olive);
+    transition: var(--transition);
+}
+
+.icons i:hover {
+    color: var(--accent-pink);
+    transform: translateY(-4px) scale(1.2);
+}
+
+/* Scroll indicator */
+.sc-down {
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+}
+
+.sc-down i {
+    display: block;
+    padding: 12px;
+    font-size: 24px;
+    color: var(--accent-olive);
+    background: #FFFFFF;
+    border: 1px solid var(--border-pink);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(244, 172, 183, 0.2);
+    transition: var(--transition);
+}
+
+.sc-down i:hover {
+    color: #FFFFFF;
+    background: var(--accent-pink);
+    transform: translateY(4px);
+}
+
+/* ===== DROPDOWN MENU TUGAS ===== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a i {
+    font-size: 15px;
+    margin-left: 4px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 14px;
+    padding: 10px 0;
+    min-width: 190px;
+    box-shadow: 0 15px 35px rgba(244, 172, 183, 0.3);
+    border: 1px solid var(--border-pink);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: var(--text-forest) !important;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin-left: 0 !important;
+    text-align: center;
+    transition: var(--transition);
+    border-bottom: none !important;
+}
+
+.dropdown-menu li a:hover {
+    background: var(--accent-pink-soft);
+    color: var(--accent-olive) !important;
+    transform: none !important;
+}
+
+/* ==========================================================
+   NATURE OVERLAY: SULUR TANAMAN MENJUNTAI (FULL CSS)
+   ========================================================== */
+
+/* Kontainer utama transparan */
+.nature-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Aman: tidak menghalangi klik mouse */
+    z-index: 998;
+    overflow: hidden;
+}
+
+/* Daun Arah Kiri */
+.v-leaf.leaf-l {
+    left: -18px;
+    border-radius: 22px 3px 20px 4px;
+    transform: rotate(-38deg);
+}
+
+/* Daun Arah Kanan */
+.v-leaf.leaf-r {
+    left: 2px;
+    border-radius: 3px 22px 4px 20px;
+    transform: rotate(38deg);
+}
+
+
+/* Daun-daun ikut sedikit bergoyang ditiup angin */
+.ivy-strand:hover .v-leaf,
+.v-leaf {
+    animation: daunGoyang 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes daunGoyang {
+    0%   { transform: rotate(-35deg) scale(0.98); }
+    100% { transform: rotate(-42deg) scale(1.03); }
+}
+
+.v-leaf.leaf-r {
+    animation-name: daunGoyangKanan;
+}
+
+@keyframes daunGoyangKanan {
+    0%   { transform: rotate(35deg) scale(0.98); }
+    100% { transform: rotate(42deg) scale(1.03); }
+}
+
+/* ==========================================================
+   KUPU-KUPU REALISTIS (4 KELOPAK SAYAP + TUBUH + ANTENA)
+   ========================================================== */
+.realistic-butterfly {
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    opacity: 0;
+    transform-origin: center center;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+    animation: lintasanKupuKupu 15s ease-in-out infinite;
+}
+
+.butterfly-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 26px;
+    background: #3E2723;
+    border-radius: 10px;
+    z-index: 5;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.butterfly-body .antenna {
+    position: absolute;
+    top: -8px;
+    width: 1.5px;
+    height: 10px;
+    background: #5C4033;
+    border-radius: 1px;
+}
+
+.butterfly-body .antenna-left {
+    left: -1px;
+    transform: rotate(-28deg);
+}
+
+.butterfly-body .antenna-right {
+    right: -1px;
+    transform: rotate(28deg);
+}
+
+.butterfly-body .antenna::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    width: 3.5px;
+    height: 3.5px;
+    background: #8B5E3C;
+    border-radius: 50%;
+}
+
+.wing-side {
+    position: absolute;
+    top: 50%;
+    width: 25px;
+    height: 40px;
+    transform-origin: center center;
+}
+
+.wing-side-left {
+    right: 50%;
+    transform-origin: right center;
+    animation: kepakSayapKiri 0.2s ease-in-out infinite alternate;
+}
+
+.wing-side-right {
+    left: 50%;
+    transform-origin: left center;
+    animation: kepakSayapKanan 0.2s ease-in-out infinite alternate;
+}
+
+.wing {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.forewing {
+    width: 24px;
+    height: 28px;
+    top: 0;
+    background: radial-gradient(circle at 40% 30%, #FAF3E0 15%, #faaffa 55%, #ec7cf4 95%);
+    box-shadow: inset 0 0 5px rgba(62, 39, 35, 0.4);
+}
+
+.forewing-left {
+    right: 2px;
+    border-radius: 22px 6px 12px 18px;
+    transform: rotate(-12deg);
+}
+
+.forewing-right {
+    left: 2px;
+    border-radius: 6px 22px 18px 12px;
+    transform: rotate(12deg);
+}
+
+.hindwing {
+    width: 18px;
+    height: 20px;
+    top: 18px;
+    background: radial-gradient(circle at 50% 40%, #FAF3E0 10%, #faaffa 60%, #ec7cf4 100%);
+    box-shadow: inset 0 0 4px rgba(62, 39, 35, 0.35);
+}
+
+.hindwing-left {
+    right: 4px;
+    border-radius: 12px 6px 16px 14px;
+    transform: rotate(10deg);
+}
+
+.hindwing-right {
+    left: 4px;
+    border-radius: 6px 12px 14px 16px;
+    transform: rotate(-10deg);
+}
+
+@keyframes kepakSayapKiri {
+    0% { transform: translateY(-50%) perspective(400px) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: translateY(-50%) perspective(400px) rotateY(68deg) rotateZ(-5deg); }
+}
+
+@keyframes kepakSayapKanan {
+    0% { transform: translateY(-50%) perspective(400px) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: translateY(-50%) perspective(400px) rotateY(-68deg) rotateZ(5deg); }
+}
+
+@keyframes lintasanKupuKupu {
+    0% {
+        top: 85%;
+        left: -60px;
+        transform: rotate(30deg) scale(0.75);
+        opacity: 0;
+    }
+    7% { opacity: 0.95; }
+    22% { top: 62%; left: 22%; transform: rotate(10deg) scale(0.9); }
+    42% { top: 45%; left: 48%; transform: rotate(32deg) scale(1); }
+    62% { top: 24%; left: 74%; transform: rotate(15deg) scale(0.9); }
+    78% { top: 8%; left: 96%; transform: rotate(38deg) scale(0.8); opacity: 0.95; }
+    85% { top: -40px; left: 106%; opacity: 0; }
+    100% { top: -40px; left: 106%; opacity: 0; }
+}
+
+/* ==========================================================
+   DAUN BERPUTAR MELAYANG (FALLING LEAVES)
+   ========================================================== */
+.leaf {
+    position: absolute;
+    border-radius: 2px 20px 2px 20px;
+    opacity: 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.leaf-1 {
+    left: 22%;
+    width: 18px;
+    height: 28px;
+    background: linear-gradient(135deg, #8A9A5B, #6B8E23);
+    animation: gugurBerputar 11s linear infinite 1.5s;
+}
+
+.leaf-2 {
+    left: 58%;
+    width: 15px;
+    height: 24px;
+    background: linear-gradient(135deg, #A3B18A, #708238);
+    animation: gugurBerputar 14s linear infinite 6s;
+}
+
+.leaf-3 {
+    left: 82%;
+    width: 20px;
+    height: 30px;
+    background: linear-gradient(135deg, #B2AC88, #556B2F);
+    animation: gugurBerputar 12s linear infinite 9.5s;
+}
+
+@keyframes gugurBerputar {
+    0%   { top: -10%; transform: translateX(0) rotate(0deg) rotateY(0deg); opacity: 0; }
+    10%  { opacity: 0.85; }
+    30%  { transform: translateX(40px) rotate(110deg) rotateY(180deg); }
+    60%  { transform: translateX(-35px) rotate(230deg) rotateY(360deg); }
+    85%  { opacity: 0.85; }
+    100% { top: 105%; transform: translateX(25px) rotate(360deg) rotateY(540deg); opacity: 0; }
+}
+
+/* ==========================================================
+   RESPONSIVITAS MOBILE
+   ========================================================== */
+@media (max-width: 768px) {
+    .realistic-butterfly {
+        transform: scale(0.7);
+    }
+}
+
+/* Pengoptimalan untuk layar HP */
+@media (max-width: 768px) {
+    .butterfly {
+        transform: scale(0.75);
+    }
+    .leaf-2, .leaf-3 {
+        display: none; /* Cukup 1 daun di layar kecil agar tidak sesak */
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .home {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 130px;
+        padding-bottom: 80px;
+        gap: 2.5rem;
+    }
+
+    .home-text h5 {
+        font-size: 48px;
+    }
+
+    .home-text p {
+        margin: 0 auto 15px;
+    }
+
+    .home-img img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .icons {
+        left: 2%;
+    }
+}
+
+/* ==========================================================
+   ANIMASI KEYFRAMES
+   ========================================================== */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-35px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(45px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .home {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 130px;
+        padding-bottom: 80px;
+        gap: 2.5rem;
+    }
+    .home-text h5 { font-size: 48px; }
+    .home-text p { margin: 0 auto 15px; }
+    .home-img img { width: 290px; height: 290px; }
+}
+
+@media (max-width: 768px) {
+    header { padding: 20px 5%; }
+    .list a { margin-left: 20px; font-size: 13px; }
+    .home-text h5 { font-size: 38px; }
+    .icons { display: none; }
+}
